@@ -36,3 +36,10 @@
 1. Make sure all is well and you can run things, and then make an initial commit.
   * `$ nodemon app.js` (OR `$ node app.js` if you do not have nodemon installed)
   * Go to [http://localhost:3000/](http://localhost:3000/) and be greeted!
+
+1. Add routes for each operator, so that visiting each of the following paths will result in performing the operation and displaying it (simply, following pattern in the first path created):
+  * `/add/3/6`
+  * `/subt/9/6`
+  * `/mult/3/3`
+  * `/div/9/3`
+1. Refactor the four routes into one route
