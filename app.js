@@ -5,24 +5,18 @@ app.get("/", function (req, res) {
   res.send("Oh Hai!");
 });
 
-app.get("/add/:term1/:term2", function (req, res) {
-  var sum = Number(req.params.term1) + Number(req.params.term2);
-  res.send(sum.toString());
-})
-
-app.get("/subt/:minuend/:subtrahend", function (req, res) {
-  var difference = Number(req.params.minuend) - Number(req.params.subtrahend);
-  res.send(difference.toString());
-})
-
-app.get("/mult/:multiplicand/:multiplier", function (req, res) {
-  var product = Number(req.params.multiplicand) * Number(req.params.multiplier);
-  res.send(product.toString());
-})
-
-app.get('/div/:numerator/:denominator', function (req, res) {
-  var quotient = Number(req.params.numerator) / Number(req.params.denominator);
-  res.send(quotient.toString());
+app.get("/:operation/:num1/:num2", function (req, res) {
+  var answer;
+  if (req.params.operation === "add") {
+    answer = Number(req.params.num1) + Number(req.params.num2);
+  } else if (req.params.operation === "subt") {
+    answer = Number(req.params.num1) - Number(req.params.num2);
+  } else if (req.params.operation === "mult") {
+    answer = Number(req.params.num1) * Number(req.params.num2);
+  } else if (req.params.operation === "div") {
+    answer = Number(req.params.num1) / Number(req.params.num2);
+  }
+  res.send(answer.toString());
 })
 
 app.listen(3000, function () {
