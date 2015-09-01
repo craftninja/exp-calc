@@ -20,6 +20,11 @@ app.get("/mult/:multiplicand/:multiplier", function (req, res) {
   res.send(product.toString());
 })
 
+app.get('/div/:numerator/:denominator', function (req, res) {
+  var quotient = Number(req.params.numerator) / Number(req.params.denominator);
+  res.send(quotient.toString());
+})
+
 app.listen(3000, function () {
   console.log("Starting a server on localhost:3000");
 });
