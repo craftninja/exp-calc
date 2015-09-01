@@ -15,6 +15,11 @@ app.get("/subt/:minuend/:subtrahend", function (req, res) {
   res.send(difference.toString());
 })
 
+app.get("/mult/:multiplicand/:multiplier", function (req, res) {
+  var product = Number(req.params.multiplicand) * Number(req.params.multiplier);
+  res.send(product.toString());
+})
+
 app.listen(3000, function () {
   console.log("Starting a server on localhost:3000");
 });
